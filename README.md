@@ -29,17 +29,6 @@ Version Control & CI/CD Ready → GitHub repo structured for professional deploy
 
 🔒 Future-ready for authentication & SaaS deployment
 
-🏗️ Project Structure
-Email-generator-AI-Wrapper/
-│── src/main/java/com/redhat/Crypto/       # Core package
-│   ├── controller/                        # REST controllers
-│   ├── service/                           # Business logic (AI integration)
-│   ├── model/                             # DTOs / request classes
-│   └── util/                              # Helper utilities
-│── src/main/resources/                    # Config (application.properties)
-│── pom.xml                                # Maven dependencies
-└── README.md                              # Documentation
-
 📡 API Usage
 Endpoint: POST /api/v1/email/generate
 Request:
