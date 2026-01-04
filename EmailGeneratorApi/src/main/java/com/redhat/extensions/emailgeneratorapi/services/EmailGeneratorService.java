@@ -6,8 +6,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.redhat.extensions.emailgeneratorapi.models.EmailRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Service
@@ -27,24 +32,21 @@ public class EmailGeneratorService {
     public String generateEmailResponse(EmailRequest emailRequest) {
         //generate prompt
         String prompt = generatePrompt(emailRequest);
+        log.info("Gemini prompt: {}", prompt);
         //raw json apiModel
-        String requestBody = String.format("""
-                {
-                    "contents": [
-                      {
-                        "parts": [
-                          {
-                            "text": "%s"
-                          }
-                        ]
-                      }
-                    ]
-                  }""", prompt);
+        Map<String, Object> requestBody = Map.of(
+                "contents", List.of(
+                        Map.of("parts", List.of(
+                                Map.of("text", prompt)
+                        ))
+                )
+        );
         //sendRequest
         String response = webClient.post()
                 .uri(uriBuilder -> uriBuilder.path("/v1beta/models/gemini-2.0-flash:generateContent")
                                 .build())
                 .header("Content-Type","application/json")
+                .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)
                 .header("X-goog-api-key",apiKey)
                 .bodyValue(requestBody)
                 .retrieve()
