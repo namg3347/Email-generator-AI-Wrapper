@@ -3,33 +3,25 @@
 An AI-powered Email Generator API built with Java Spring Boot, designed to generate professional, context-aware email responses.
 This project demonstrates REST API design, AI integration, secure backend development, and clean code practices.
 
-🚀 What I Built / Skills Demonstrated
+What I Built / Skills Demonstrated
 
 Java + Spring Boot → REST API architecture, dependency injection, layered design
 
 AI API Integration → Connected with LLMs (OpenAI/Gemini) for natural language email generation
-
 Custom Email Prompting Engine → Supports tones (formal, casual, friendly, etc.) & additional remarks
-
 Error Handling & Validation → Clean request/response structure
-
 Scalability in Mind → Ready for Chrome extension / Gmail API integration
-
 Version Control & CI/CD Ready → GitHub repo structured for professional deployment
 
-✨ Features
+Features
 
-📝 Generate instant professional replies from raw emails
+Generate instant professional replies from raw emails
+Choose different tones (formal, casual, friendly, persuasive, etc.)
+Add custom remarks for personalization
+REST API endpoints for easy integration
+Future-ready for authentication & SaaS deployment
 
-🎭 Choose different tones (formal, casual, friendly, persuasive, etc.)
-
-💬 Add custom remarks for personalization
-
-⚡ REST API endpoints for easy integration
-
-🔒 Future-ready for authentication & SaaS deployment
-
-📡 API Usage
+API Usage
 Endpoint: POST /api/v1/email/generate
 Request:
 {
@@ -43,13 +35,10 @@ Response:
   "generatedEmail": "Dear HR,\n\nI hope this message finds you well. I am writing to kindly follow up on my job application..."
 }
 
-🛠️ Getting Started
+Getting Started
 Prerequisites
-
 Java 17+
-
 Maven 3.8+
-
 AI API key (OpenAI, Gemini, etc.)
 
 Clone the repo
@@ -62,24 +51,3 @@ mvn spring-boot:run
 
 
 Server runs at: 👉 http://localhost:8080
-
-📌 Roadmap
-
- Inbox Integration (Gmail/Outlook API)
-
- Chrome Extension for direct usage inside email clients
-
- Multi-language support
-
- SaaS Platform with authentication & billing
-
-🤝 Contributing
-
-Contributions, feature requests, and ideas are welcome.
-Fork the repo → implement your feature → create a PR.
-
-📜 License
-
-This project is licensed under the MIT License.
-
-⚡ This project highlights Spring Boot, REST APIs, AI integration, JSON handling, and clean backend design — ideal for showcasing backend + AI skills in a professional portfolio.
